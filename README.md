@@ -2,7 +2,9 @@
 This is my personal configuration for all my envioroments (Windows, OSX and Linux)
 
 ## Requirements
-- Install [Tuckr](https://github.com/RaphGL/Tuckr)
+- Nvim
+- Zsh
+- Fzf
 
 ## Installation
 Run the following command:

@@ -1,0 +1,5 @@
+--target=$HOME
+--dotfiles
+--ignore=.stowrc
+--ignore=DS_Store
+--ignore=setup.sh
