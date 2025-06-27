@@ -65,3 +65,6 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls -la --color $realpath'
 # Shell integration
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+
+# Importing .env file if it exists
+set -o allexport; source .env; set +o allexport
