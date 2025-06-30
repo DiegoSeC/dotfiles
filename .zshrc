@@ -27,6 +27,10 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 zinit ice depth=1; zinit light jeffreytse/zsh-vi-mode
 zinit light Aloxaf/fzf-tab
+zinit for \
+    configure'--disable-utf8proc' \
+    make \
+  @tmux/tmux
 
 autoload -Uz compinit && compinit
 
