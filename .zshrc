@@ -67,4 +67,8 @@ eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
 # Importing .env file if it exists
-set -o allexport; source .env; set +o allexport
+# Check if .env file exists in the home directory
+if [[ -f "$HOME/.env" ]]; then
+	# Load environment variables from .env file
+	set -o allexport; source "$HOME/.env"; set +o allexport
+fi
