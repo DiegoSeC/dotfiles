@@ -75,13 +75,22 @@ if [[ -f "$HOME/.env" ]]; then
 fi
 
 # Ruby
+if command -v rbenv &> /dev/null; then
+	# If rbenv is installed, initialize it
+	eval "$(rbenv init - zsh)"
+fi
+
+if which ruby >/dev/null && which gem >/dev/null; then
+  PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
+
 export GEM_HOME="$(gem env user_gemhome)"
 export PATH="$PATH:$GEM_HOME/bin"
 
 source $(dirname $(gem which colorls))/tab_complete.sh
 
 # Alias
-alias ls='colorls -A --sd'
+alias ls='colorls -A'
 if command -v bat &> /dev/null; then
 	alias cat='bat'
 	export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
