@@ -36,9 +36,6 @@ autoload -Uz compinit && compinit
 
 zinit cdreplay -q
 
-# Alias
-alias ls='ls -la --color=auto'
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -76,3 +73,10 @@ if [[ -f "$HOME/.env" ]]; then
 	# Load environment variables from .env file
 	set -o allexport; source "$HOME/.env"; set +o allexport
 fi
+
+# Ruby
+export GEM_HOME="$(gem env user_gemhome)"
+export PATH="$PATH:$GEM_HOME/bin"
+
+source $(dirname $(gem which colorls))/tab_complete.sh
+alias ls='colorls -A --sd'
