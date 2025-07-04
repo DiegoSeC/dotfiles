@@ -86,6 +86,9 @@ fi
 
 export GEM_HOME="$(gem env user_gemhome)"
 export PATH="$PATH:$GEM_HOME/bin"
+export PATH="$PATH:$HOME/.tmux/plugins/tmuxifier/bin"
+
+eval "$(tmuxifier init -)"
 
 source $(dirname $(gem which colorls))/tab_complete.sh
 
