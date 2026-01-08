@@ -1,0 +1,61 @@
+[
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      // Toggle Panel (Abrir/Cerrar)
+      "space e": "workspace::ToggleLeftDock",
+      // Toggle Focus (Saltar entre editor y panel)
+      "space o": "project_panel::ToggleFocus",
+      // Búsquedas (Search)
+      "space s c": "git::Diff", // Archivos modificados en Git
+      "space s f": "file_finder::Toggle", // Buscar archivos por nombre
+      "space s w": "buffer_search::Deploy", // Buscar palabra en el archivo actual
+      "space s g": "pane::DeploySearch", // Buscar palabra en todo el proyecto (Grep)
+      // LSP / Inteligencia de Código (Go To / Rename)
+      "g r n": "editor::Rename", // Reemplazar nombre (Rename)
+      "g r d": "editor::GoToDefinition", // Ir a la definición
+      "g r i": "editor::GoToImplementation", // Ir a la implementación
+      "space g g": "git_panel::ToggleFocus", // Abrir/Cerrar panel de Git
+    },
+  },
+  {
+    "context": "ProjectPanel && !editing",
+    "bindings": {
+      // Navegación estilo Vim
+      "j": "menu::SelectNext",
+      "k": "menu::SelectPrevious",
+      "l": "project_panel::OpenPermanent",
+      "h": "project_panel::CollapseSelectedEntry",
+      "enter": "menu::Confirm",
+      "space g g": "git_panel::ToggleFocus",
+
+      // Gestión de archivos
+      "a": "project_panel::NewFile",
+      "shift-a": "project_panel::NewDirectory", // Crear carpeta
+      "r": "project_panel::Rename",
+      "m": "project_panel::Cut", // Prepara para mover
+      "p": "project_panel::Paste", // Pega el archivo movido
+      "d": "project_panel::Delete",
+
+      // Comportamiento de Leader dentro del Panel
+      "space e": "workspace::ToggleLeftDock",
+      "space o": "project_panel::ToggleFocus",
+      "space s c": "git::Diff",
+      "space s f": "file_finder::Toggle",
+      "space s w": "buffer_search::Deploy",
+      "space s g": "pane::DeploySearch",
+    },
+  },
+  {
+    "context": "GitPanel && ChangesList",
+    "bindings": {
+      "j": "menu::SelectNext",
+      "k": "menu::SelectPrevious",
+      // Acciones de Git solicitadas
+      "d": "git::RestoreFile", // Descartar cambios
+      "c": "git::Commit", // Abre el cuadro para escribir el commit
+      "p": "git::Pull", // Traer cambios del remoto
+      "shift-p": "git::Push", // Subir cambios al remoto (P mayúscula)
+    },
+  },
+]
