@@ -2,6 +2,10 @@
   {
     "context": "Editor && vim_mode == normal",
     "bindings": {
+      // Navegación de Buffers (Doble Leader)
+      "space space": "tab_switcher::Toggle",
+      "space c": "pane::CloseActiveItem", // Cerrar buffer/pestaña actual
+      "space /": "editor::ToggleComments", // Comentar/Descomentar
       // Toggle Panel (Abrir/Cerrar)
       "space e": "workspace::ToggleLeftDock",
       // Toggle Focus (Saltar entre editor y panel)
@@ -56,6 +60,12 @@
       "c": "git::Commit", // Abre el cuadro para escribir el commit
       "p": "git::Pull", // Traer cambios del remoto
       "shift-p": "git::Push", // Subir cambios al remoto (P mayúscula)
+    },
+  },
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      "space /": "editor::ToggleComments", // Comentar bloques en modo visual
     },
   },
 ]
