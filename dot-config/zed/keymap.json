@@ -68,4 +68,11 @@
       "space /": "editor::ToggleComments", // Comentar bloques en modo visual
     },
   },
+  {
+    "context": "Picker",
+    "bindings": {
+      "j": "menu::SelectNext",
+      "k": "menu::SelectPrevious",
+    },
+  },
 ]
