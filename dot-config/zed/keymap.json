@@ -6,6 +6,7 @@
       "space space": "tab_switcher::Toggle",
       "space c": "pane::CloseActiveItem", // Cerrar buffer/pestaña actual
       "space /": "editor::ToggleComments", // Comentar/Descomentar
+      "ctrl-j": "workspace::ToggleBottomDock",
       // Toggle Panel (Abrir/Cerrar)
       "space e": "workspace::ToggleLeftDock",
       // Toggle Focus (Saltar entre editor y panel)
@@ -48,6 +49,7 @@
       "space s f": "file_finder::Toggle",
       "space s w": "buffer_search::Deploy",
       "space s g": "pane::DeploySearch",
+      "ctrl-j": "workspace::ToggleBottomDock", // Terminal desde el panel
     },
   },
   {
@@ -60,6 +62,7 @@
       "c": "git::Commit", // Abre el cuadro para escribir el commit
       "p": "git::Pull", // Traer cambios del remoto
       "shift-p": "git::Push", // Subir cambios al remoto (P mayúscula)
+      "ctrl-j": "workspace::ToggleBottomDock", // Terminal desde Git
     },
   },
   {
@@ -69,10 +72,18 @@
     },
   },
   {
-    "context": "Picker",
+    "context": "Picker && !editing",
     "bindings": {
-      "j": "menu::SelectNext",
-      "k": "menu::SelectPrevious",
+      "ctrl-j": "menu::SelectNext",
+      "ctrl-k": "menu::SelectPrevious",
+    },
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      // Para poder cerrar el terminal con la misma tecla estando dentro de él
+      "ctrl-j": "workspace::ToggleBottomDock",
+      "cmd-j": "workspace::ToggleBottomDock",
     },
   },
 ]
