@@ -20,7 +20,10 @@
       "g r n": "editor::Rename", // Reemplazar nombre (Rename)
       "g r d": "editor::GoToDefinition", // Ir a la definición
       "g r i": "editor::GoToImplementation", // Ir a la implementación
-      "space g g": "git_panel::ToggleFocus", // Abrir/Cerrar panel de Git
+      "space g g": [
+        "task::Spawn",
+        { "task_name": "Open LazyGit", "reveal_target": "center" },
+      ],
     },
   },
   {
@@ -32,7 +35,10 @@
       "l": "project_panel::OpenPermanent",
       "h": "project_panel::CollapseSelectedEntry",
       "enter": "menu::Confirm",
-      "space g g": "git_panel::ToggleFocus",
+      "space g g": [
+        "task::Spawn",
+        { "task_name": "Open LazyGit", "reveal_target": "center" },
+      ],
 
       // Gestión de archivos
       "a": "project_panel::NewFile",
