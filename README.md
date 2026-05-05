@@ -68,7 +68,17 @@ Before deploying, verify all required tools are installed:
 
 Then deploy all configurations with one command:
 
+> **Warning:** If you have existing configuration files (`.zshrc`, `.zshenv`,
+> `.tmux.conf`, etc.), you must back them up and remove them before running
+> `./setup.sh`, otherwise stow will report conflicts.
+
 ```bash
+# Backup and remove existing configs
+mv ~/.zshrc ~/.zshrc.bak
+mv ~/.zshenv ~/.zshenv.bak
+mv ~/.tmux.conf ~/.tmux.conf.bak
+
+# Deploy
 ./setup.sh
 ```
 
@@ -115,6 +125,7 @@ stow -D dot-config
 | Path | Description |
 |------|-------------|
 | `dot-config/bat/` | Bat configuration with custom themes |
+| `dot-config/lazygit/` | Lazygit configuration with Catppuccin Frappe theme |
 | `dot-config/lsd/` | Lsd configuration (ls replacement) |
 | `.stowrc` | GNU Stow configuration (target directory settings) |
 
@@ -190,7 +201,8 @@ Install manually as mentioned in the [official documentation](https://github.com
 
 ### Stow Conflicts
 
-If stow reports a conflict, it means a file already exists at the target location. Back up the existing file before running stow:
+If stow reports a conflict, it means a file already exists at the target location.
+Back up and remove the existing file before running stow:
 
 ```bash
 mv ~/.zshrc ~/.zshrc.bak

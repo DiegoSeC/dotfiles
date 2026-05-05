@@ -67,27 +67,9 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls -la --color $realpath'
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
-# Importing .env file if it exists
-# Check if .env file exists in the home directory
-if [[ -f "$HOME/.env" ]]; then
-	# Load environment variables from .env file
-	set -o allexport; source "$HOME/.env"; set +o allexport
-fi
-
-# Ruby
-if command -v rbenv &> /dev/null; then
-	eval "$(rbenv init - zsh)"
-fi
-
-if which ruby >/dev/null && which gem >/dev/null; then
-	export GEM_HOME="$(ruby -r rubygems -e 'puts Gem.user_dir')"
-	export PATH="$GEM_HOME/bin:$PATH"
-fi
-
 # Alias
 alias ls='lsd -A'
 
 if command -v bat &> /dev/null; then
 	alias cat='bat'
-	export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
 fi
