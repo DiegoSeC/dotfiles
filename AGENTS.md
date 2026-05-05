@@ -19,6 +19,8 @@ The following tools are authorized for use and configuration in this project:
 * `lsd` (Docs: https://github.com/lsd-rs/lsd/blob/main/README.md)
 * `tree-sitter-cli` (Docs: https://github.com/tree-sitter/tree-sitter/blob/master/crates/cli/README.md)
 * `nodejs`
+* `uv` (Docs: https://docs.astral.sh/uv/)
+* `sqlit` (Docs: https://github.com/Maxteabag/sqlit)
 
 ## Repository Architecture
 Directory and file names must strictly follow the official documentation for each respective tool. This project uses `stow` conventions for symlinking.
@@ -30,9 +32,13 @@ Directory and file names must strictly follow the official documentation for eac
 ```text
 ├── dot-config/      # Maps to ~/.config/
 │   ├── bat/         # Config for bat
+│   ├── ghostty/     # Ghostty terminal configuration
+│   ├── lazygit/     # Config for lazygit
 │   ├── lsd/         # Config for lsd
-│   └── nvim/        # Config for nvim (Do not modify!)
+│   ├── nvim/        # Config for nvim (Do not modify!)
+│   └── sqlit/       # Config for sqlit
 ├── .zshrc           # Maps to ~/.zshrc
+├── .zshenv          # Maps to ~/.zshenv
 ├── .tmux.conf       # Maps to ~/.tmux.conf
 ├── .wezterm.lua     # Maps to ~/.wezterm.lua
 └── .stowrc          # stow configuration

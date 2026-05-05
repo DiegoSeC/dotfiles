@@ -13,8 +13,9 @@ cd ~/dotfiles
 # git submodule update --init --recursive
 
 # 2. Install core tools
-brew install stow neovim zsh fzf bat tmux zoxide lazygit lsd node rust
+brew install stow neovim zsh fzf bat tmux zoxide lazygit lsd node rust uv
 cargo binstall tree-sitter-cli
+uv tool install sqlit-tui
 
 # Optional: terminal emulator (choose one)
 brew install --cask wezterm
@@ -31,8 +32,9 @@ brew install --cask wezterm
 Install all required tools in one command:
 
 ```bash
-brew install stow neovim zsh fzf bat tmux zoxide lazygit lsd node rust
+brew install stow neovim zsh fzf bat tmux zoxide lazygit lsd node rust uv
 cargo binstall tree-sitter-cli
+uv tool install sqlit-tui
 ```
 
 ### Terminal Emulator (Optional)
@@ -148,6 +150,8 @@ stow -D dot-config
 | Lsd | Next-gen ls with icons and colors | [GitHub](https://github.com/lsd-rs/lsd) |
 | Cargo | Rust package manager and build tool | [Website](https://doc.rust-lang.org/cargo/) |
 | Node.js | JavaScript runtime | [Website](https://nodejs.org/) |
+| uv | Fast Python package installer and resolver | [Docs](https://docs.astral.sh/uv/) |
+| sqlit | Terminal TUI for SQL databases | [GitHub](https://github.com/Maxteabag/sqlit) |
 | Tree-sitter | Incremental parsing library | [GitHub](https://github.com/tree-sitter/tree-sitter) |
 
 ### Zsh Themes

@@ -14,7 +14,7 @@ BOLD='\033[1m'
 NC='\033[0m' # No Color
 
 # Required tools
-TOOLS=(stow nvim zsh fzf bat tmux wezterm zoxide lazygit lsd)
+TOOLS=(stow nvim zsh fzf bat tmux wezterm zoxide lazygit lsd uv sqlit)
 
 # Track results
 ALL_PASSED=true
@@ -40,7 +40,9 @@ if $ALL_PASSED; then
 else
     echo -e "${RED}${BOLD}Some tools are missing.${NC}"
     echo "Install missing tools with Homebrew:"
-    echo "  brew install stow neovim zsh fzf bat tmux zoxide lazygit lsd"
+    echo "  brew install stow neovim zsh fzf bat tmux zoxide lazygit lsd node rust uv"
+    echo "  cargo binstall tree-sitter-cli"
+    echo "  uv tool install sqlit-tui"
     echo "  brew install --cask wezterm"
     exit 1
 fi

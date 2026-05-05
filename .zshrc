@@ -73,3 +73,5 @@ alias ls='lsd -A'
 if command -v bat &> /dev/null; then
 	alias cat='bat'
 fi
+
+. "$HOME/.local/share/../bin/env"
