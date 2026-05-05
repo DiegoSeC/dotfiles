@@ -113,6 +113,7 @@ stow -D dot-config
 |------|-------------|
 | `.tmux.conf` | Tmux terminal multiplexer configuration |
 | `.wezterm.lua` | Wezterm terminal emulator configuration |
+| `dot-config/ghostty/` | Ghostty terminal emulator configuration with Catppuccin Frappe theme |
 
 ### Editor
 
