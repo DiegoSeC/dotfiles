@@ -35,7 +35,8 @@ Directory and file names must strictly follow the official documentation for eac
 ├── .zshrc           # Maps to ~/.zshrc
 ├── .tmux.conf       # Maps to ~/.tmux.conf
 ├── .wezterm.lua     # Maps to ~/.wezterm.lua
-└── .stowrc          # stow configuration```
+└── .stowrc          # stow configuration
+```
 
 ## Operating Directives
 
