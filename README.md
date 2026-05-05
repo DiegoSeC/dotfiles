@@ -13,7 +13,8 @@ cd ~/dotfiles
 # git submodule update --init --recursive
 
 # 2. Install core tools
-brew install stow neovim zsh fzf bat tmux zoxide lazygit lsd node tree-sitter
+brew install stow neovim zsh fzf bat tmux zoxide lazygit lsd node rust
+cargo binstall tree-sitter-cli
 
 # Optional: terminal emulator (choose one)
 brew install --cask wezterm
@@ -30,7 +31,8 @@ brew install --cask wezterm
 Install all required tools in one command:
 
 ```bash
-brew install stow neovim zsh fzf bat tmux zoxide lazygit lsd node tree-sitter
+brew install stow neovim zsh fzf bat tmux zoxide lazygit lsd node rust
+cargo binstall tree-sitter-cli
 ```
 
 ### Terminal Emulator (Optional)

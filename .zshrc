@@ -76,16 +76,13 @@ fi
 
 # Ruby
 if command -v rbenv &> /dev/null; then
-	# If rbenv is installed, initialize it
 	eval "$(rbenv init - zsh)"
 fi
 
 if which ruby >/dev/null && which gem >/dev/null; then
-  PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+	export GEM_HOME="$(ruby -r rubygems -e 'puts Gem.user_dir')"
+	export PATH="$GEM_HOME/bin:$PATH"
 fi
-
-export GEM_HOME="$(gem env user_gemhome)"
-export PATH="$PATH:$GEM_HOME/bin"
 
 # Alias
 alias ls='lsd -A'
