@@ -1,5 +1,4 @@
+# GNU Stow configuration
+# This file tells stow to use the home directory as the target
+--dir=$HOME/dotfiles
 --target=$HOME
---dotfiles
---ignore=.stowrc
---ignore=DS_Store
---ignore=setup.sh
