@@ -1,32 +1,57 @@
 # Dotfiles
 
-My personal configuration for all environments (Windows, macOS, and Linux), managed with [GNU Stow](https://www.gnu.org/software/stow/).
+My personal configuration for macOS and Linux, managed with [GNU Stow](https://www.gnu.org/software/stow/).
+
+## Quick Start
+
+```bash
+# 1. Clone (submodules required for Neovim config)
+git clone --recurse-submodules git@github.com:DiegoSeC/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+
+# Already cloned without submodules? Run:
+# git submodule update --init --recursive
+
+# 2. Install core tools
+brew install stow neovim zsh fzf bat tmux zoxide lazygit lsd node tree-sitter
+
+# Optional: terminal emulator (choose one)
+brew install --cask wezterm
+# brew install --cask ghostty
+
+# 3. Deploy all configurations
+./setup.sh
+```
 
 ## Prerequisites
 
-Install the required tools using [Homebrew](https://brew.sh/):
+### Core Tools
+
+Install all required tools in one command:
 
 ```bash
-# GNU Stow (symlink management)
-brew install stow
+brew install stow neovim zsh fzf bat tmux zoxide lazygit lsd node tree-sitter
+```
 
-# Neovim (editor)
-brew install neovim
+### Terminal Emulator (Optional)
 
-# Zsh (shell - pre-installed on macOS)
-brew install zsh
+Choose one terminal emulator:
 
-# Fzf (fuzzy finder)
-brew install fzf
+```bash
+brew install --cask wezterm   # Wezterm
+# or
+brew install --cask ghostty   # Ghostty
+```
 
-# Bat (cat with syntax highlighting)
-brew install bat
+### Optional Prerequisites
 
-# Tmux (terminal multiplexer)
-brew install tmux
+These are conditionally loaded in `.zshrc` if installed:
 
-# Wezterm (terminal emulator)
-brew install --cask wezterm
+```bash
+# Ruby version manager (optional)
+brew install rbenv
+
+# Node.js is already included in core tools above
 ```
 
 See the [Tools](#tools) section for documentation links.
@@ -88,6 +113,7 @@ stow -D dot-config
 | Path | Description |
 |------|-------------|
 | `dot-config/bat/` | Bat configuration with custom themes |
+| `dot-config/lsd/` | Lsd configuration (ls replacement) |
 | `.stowrc` | GNU Stow configuration (target directory settings) |
 
 ## Tools
@@ -103,6 +129,18 @@ stow -D dot-config
 | Bat | Cat clone with syntax highlighting | [GitHub](https://github.com/sharkdp/bat) |
 | Tmux | Terminal multiplexer | [GitHub](https://github.com/tmux/tmux) |
 | Wezterm | GPU-accelerated terminal emulator | [GitHub](https://github.com/wez/wezterm) |
+| Zoxide | Smarter cd command with learning | [GitHub](https://github.com/ajeetdsouza/zoxide) |
+| Lazygit | Simple terminal UI for git commands | [GitHub](https://github.com/jesseduffield/lazygit) |
+| Lsd | Next-gen ls with icons and colors | [GitHub](https://github.com/lsd-rs/lsd) |
+| Cargo | Rust package manager and build tool | [Website](https://doc.rust-lang.org/cargo/) |
+| Node.js | JavaScript runtime | [Website](https://nodejs.org/) |
+| Tree-sitter | Incremental parsing library | [GitHub](https://github.com/tree-sitter/tree-sitter) |
+
+### Zsh Themes
+
+| Theme | Description | Link |
+|-------|-------------|------|
+| Powerlevel10k | Fast and configurable zsh theme | [GitHub](https://github.com/romkatv/powerlevel10k) |
 
 ### Neovim Plugins
 
@@ -139,6 +177,8 @@ stow -D dot-config
 | zsh-autosuggestions | Fish-like autosuggestions | [GitHub](https://github.com/zsh-users/zsh-autosuggestions) |
 | zsh-syntax-highlighting | Syntax highlighting for zsh | [GitHub](https://github.com/zsh-users/zsh-syntax-highlighting) |
 | fzf-tab | Replace zsh completions with fzf | [GitHub](https://github.com/Aloxaf/fzf-tab) |
+| zsh-vi-mode | Vi mode for zsh | [GitHub](https://github.com/jeffreytse/zsh-vi-mode) |
+| zsh-completions | Additional completion definitions | [GitHub](https://github.com/zsh-users/zsh-completions) |
 
 ## Troubleshooting
 

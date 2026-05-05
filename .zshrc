@@ -86,14 +86,10 @@ fi
 
 export GEM_HOME="$(gem env user_gemhome)"
 export PATH="$PATH:$GEM_HOME/bin"
-export PATH="$PATH:$HOME/.tmux/plugins/tmuxifier/bin"
-
-eval "$(tmuxifier init -)"
-
-source $(dirname $(gem which colorls))/tab_complete.sh
 
 # Alias
-alias ls='colorls -A'
+alias ls='lsd -A'
+
 if command -v bat &> /dev/null; then
 	alias cat='bat'
 	export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
